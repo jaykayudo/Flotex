@@ -164,7 +164,7 @@ class MainWindow(tk.Tk):
 	def load_font_file(self,file_path):
 		with open(file_path,'r') as stream:
 			try:
-				config = yaml.load(stream)
+				config = yaml.safe_load(stream)
 			except yaml.YAMLError as error:
 				print(error)
 				return
@@ -175,7 +175,7 @@ class MainWindow(tk.Tk):
 	def load_scheme_file(self, scheme):
 		with open(scheme, 'r') as stream:
 			try:
-				config = yaml.load(stream)
+				config = yaml.safe_load(stream)
 			except yaml.YAMLError as error:
 				print(error)
 				return
